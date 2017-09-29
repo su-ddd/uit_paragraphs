@@ -7,7 +7,6 @@
 include_once 'uit_paragraphs.features.inc';
 
 function uit_paragraphs_theme($existing, $type, $theme, $path) {
-  drupal_set_message($path);
   return array();
 }
 
