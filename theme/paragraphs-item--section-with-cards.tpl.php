@@ -26,14 +26,9 @@
  * @see template_process()
  */
 ?>
-<?php
-  $card_color = 'gray';
-  if (isset($content['field_card_color'])) {
-    $card_color = $content['field_card_color']['#items'][0]['value'];
-  }
-?>
-<div class="column card <?php print 'card-' . $card_color; ?>">
-  <h3><i class="fa <?php print render($content['field_card_icon']); ?> fa-2x" aria-hidden="true"></i><?php print render($content['field_card_title']); ?></h3>
-  <?php print render($content['field_card_body']); ?>
-  <?php print render($content['field_card_url']); ?>
-</div>
+<?php $item_id = $content['field_section_title']['#object']->item_id; ?>
+<section id="<?php print 'section_' . $item_id; ?>">
+<h2><?php print render($content['field_section_title']); ?></h2>
+<?php print render($content['field_section_introduction']); ?>
+<?php print render($content['field_section_cards']); ?>
+</section>
