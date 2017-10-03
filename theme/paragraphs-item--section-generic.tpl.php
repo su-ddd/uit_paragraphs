@@ -26,7 +26,6 @@
  * @see template_process()
  */
 ?>
-<?php $item_id = $content['field_section_title']['#object']->item_id; ?>
 <section id="<?php print 'section_' . $item_id; ?>">
 <h2><?php print render($content['field_section_title']); ?></h2>
 <?php print render($content['field_section_body']); ?>
