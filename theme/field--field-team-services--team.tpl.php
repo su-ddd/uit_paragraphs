@@ -68,13 +68,14 @@ switch(true) {
  }
 ?>
 <section class="services-list">
-  <h2><?php print t('Services'); ?></h2>
+  <h2><?php print t('Our services'); ?></h2>
+    <?php $div_open = false; ?>
     <?php foreach ($items as $delta => $item): ?>
-      <?php if (($delta % (12 / $span)) == 0) { print '<div class="row-fluid">'; } ?>
+      <?php if (($delta % (12 / $span)) == 0) { print '<div class="row-fluid">'; $div_open = true;} ?>
       <div class="span<?php print($span); ?>">
         <?php print render($item); ?>
       </div>
-      <?php if (($delta % (12 / $span)) == ((12 / $span) - 1)) { print '</div>'; } ?>
+      <?php if (($delta % (12 / $span)) == ((12 / $span) - 1)) { print '</div>'; $div_open = false; } ?>
     <?php endforeach; ?>
-  </div>
+    <?php if ($div_open) { print '</div>'; } ?>
 </section>

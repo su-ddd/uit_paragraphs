@@ -27,6 +27,6 @@
  */
 ?>
 <section id="<?php print 'section_' . $item_id; ?>">
-<h2><?php print render($content['field_section_title']); ?></h2>
+<h2><?php print render($content['field_section_icon']); ?><?php print render($content['field_section_title']); ?></h2>
 <?php print render($content['field_section_body']); ?>
 </section>

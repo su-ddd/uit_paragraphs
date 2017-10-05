@@ -46,36 +46,4 @@
  * @ingroup themeable
  */
 ?>
-<?php
- $number_of_cards = sizeof($items);
-
-switch(true) {
-   case $number_of_cards < 3:
-     $span = 6;
-     break;
-   case $number_of_cards == 3:
-     $span = 4;
-     break;
-   case $number_of_cards == 4:
-     $span = 6;
-     break;
-   case $number_of_cards > 4:
-     $span = 4;
-     break;
-   default:
-     $span = 4;
-     break;
- }
-?>
-<section class="projects-list">
-  <h2><?php print t('Our projects'); ?></h2>
-    <?php $div_open = false; ?>
-    <?php foreach ($items as $delta => $item): ?>
-      <?php if (($delta % (12 / $span)) == 0) { print '<div class="row-fluid">'; $div_open = true; } ?>
-      <div class="span<?php print($span); ?>">
-        <?php print render($item); ?>
-      </div>
-      <?php if (($delta % (12 / $span)) == ((12 / $span) - 1)) { print '</div>'; $div_open = false; } ?>
-    <?php endforeach; ?>
-    <?php if ($div_open) { print '</div>'; } ?>
-</section>
+<?php foreach ($items as $delta => $item): ?><i class="fa <?php print render($item); ?> fa-2x" aria-hidden="true"></i><?php endforeach; ?>
