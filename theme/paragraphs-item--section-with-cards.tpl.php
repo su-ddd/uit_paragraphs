@@ -26,8 +26,31 @@
  * @see template_process()
  */
 ?>
-<section id="<?php print 'section_' . $item_id; ?>">
-<h2><?php print render($content['field_section_icon']); ?><?php print render($content['field_section_title']); ?></h2>
+<?php
+  /**
+   * We determine if this section is collapsible or not, and if it is,
+   * what its default state should be.  The options are:
+   * open (always open, not collapsible),
+   * collapsible (open by default, collapsible),
+   * collapsed (closed by default, collapsible)
+   */
+   $collapse = $content['field_section_collapse']['#items'][0]['value'];
+   if (empty($collapse)) { $collapse = 'open'; }
+?>
+<section id="<?php print 'section_' . $item_id; ?>" <?php if ($collapse != 'open') { print 'class="accordion-group"'; }?>>
+<h2 <?php if ($collapse != 'open') { print 'class="accordion-heading"'; } ?>>
+  <?php if ($collapse != 'open') { print '<a class="accordion-toggle" data-toggle="collapse" href="#' . $item_id . '_content' . '">'; } ?>
+  <?php print render($content['field_section_icon']); ?><?php print render($content['field_section_title']); ?>
+  <?php if ($collapse != 'open') { print '</a>'; } ?>
+</h2>
+<?php if ($collapse != 'open'): ?>
+<div id="<?php print $item_id . '_content'; ?>" class="accordion-body collapse <?php if ($collapse == 'collapsible') { print 'in'; } ?>">
+<div class="accordion-inner">
+<?php endif; ?>
 <?php print render($content['field_section_introduction']); ?>
 <?php print render($content['field_section_cards']); ?>
+<?php if ($collapse != 'open'): ?>
+</div>
+</div>
+<?php endif; ?>
 </section>
