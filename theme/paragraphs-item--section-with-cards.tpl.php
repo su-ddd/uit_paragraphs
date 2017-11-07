@@ -34,8 +34,10 @@
    * collapsible (open by default, collapsible),
    * collapsed (closed by default, collapsible)
    */
-   $collapse = $content['field_section_collapse']['#items'][0]['value'];
-   if (empty($collapse)) { $collapse = 'open'; }
+   $collapse = 'open';
+   if (isset($content['field_section_collapse']['#items'][0]['value'])) {
+     $collapse = $content['field_section_collapse']['#items'][0]['value'];
+   }
 ?>
 <section id="<?php print 'section_' . $item_id; ?>" <?php if ($collapse != 'open') { print 'class="accordion-group"'; }?>>
 <h2 <?php if ($collapse != 'open') { print 'class="accordion-heading"'; } ?>>
