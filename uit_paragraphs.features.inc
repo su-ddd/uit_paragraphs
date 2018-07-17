@@ -38,6 +38,11 @@ function uit_paragraphs_paragraphs_info() {
       'bundle' => 'section_generic',
       'locked' => '1',
     ),
+    'section_media' => array(
+      'name' => 'Section Media',
+      'bundle' => 'section_media',
+      'locked' => '1',
+    ),
     'section_with_cards' => array(
       'name' => 'Section with Cards',
       'bundle' => 'section_with_cards',
