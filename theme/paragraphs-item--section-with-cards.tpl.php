@@ -38,8 +38,23 @@
    if (isset($content['field_section_collapse']['#items'][0]['value'])) {
      $collapse = $content['field_section_collapse']['#items'][0]['value'];
    }
+
+   $section_body_classes = ['section-body'];
+   if ($collapse != 'open') {
+     $section_body_classes[] = 'accordion-group';
+   }
+   $section_body_css_classes = join(' ', $section_body_classes);
+
+   $section_classes = [];
+   if (isset($content['field_section_bg_color']['#items'][0]['value'])) {
+     $bg_color = $content['field_section_bg_color']['#items'][0]['value'];
+     $section_classes[] = $bg_color;
+   }
+   $section_css_classes = join(' ', $section_classes);
 ?>
-<section id="<?php print 'section_' . $item_id; ?>" <?php if ($collapse != 'open') { print 'class="accordion-group"'; }?>>
+<div id="<?php print 'section_' . $item_id; ?>" class="section">
+<section <?php if (!empty($section_css_classes)) { print 'class="' . $section_css_classes . '"'; }?>>
+  <div <?php if (!empty($section_body_css_classes)) { print 'class="' . $section_body_css_classes . '"'; } ?>>
 <h2 <?php if ($collapse != 'open') { print 'class="accordion-heading"'; } ?>>
   <?php if ($collapse != 'open') { print '<a class="accordion-toggle" data-toggle="collapse" href="#' . $item_id . '_content' . '">'; } ?>
   <?php print render($content['field_section_icon']); ?><?php print render($content['field_section_title']); ?>
@@ -55,4 +70,6 @@
 </div>
 </div>
 <?php endif; ?>
+</div>
 </section>
+</div>
