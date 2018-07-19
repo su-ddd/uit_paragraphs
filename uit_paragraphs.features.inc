@@ -14,6 +14,13 @@ function uit_paragraphs_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function uit_paragraphs_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_paragraphs_info().
  */
 function uit_paragraphs_paragraphs_info() {
