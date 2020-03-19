@@ -66,6 +66,7 @@
 <?php endif; ?>
 <?php print render($content['field_section_introduction']); ?>
 <?php print render($content['field_section_cards']); ?>
+<div class="section-link"><?php print render($content['field_section_link']); ?></div>
 <?php if ($collapse != 'open'): ?>
 </div>
 </div>
