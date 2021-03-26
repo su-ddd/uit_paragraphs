@@ -54,12 +54,14 @@
 ?>
 <div id="<?php print 'section_' . $item_id; ?>" class="section">
 <section <?php if (!empty($section_css_classes)) { print 'class="' . $section_css_classes . '"'; }?>>
-  <div <?php if (!empty($section_body_css_classes)) { print 'class="' . $section_body_css_classes . '"'; } ?>>
-<h2 <?php if ($collapse != 'open') { print 'class="accordion-heading"'; } ?>>
-  <?php if ($collapse != 'open') { print '<a class="accordion-toggle" data-toggle="collapse" href="#' . $item_id . '_content' . '">'; } ?>
-  <?php print render($content['field_section_icon']); ?><?php print render($content['field_section_title']); ?>
-  <?php if ($collapse != 'open') { print '</a>'; } ?>
-</h2>
+<div <?php if (!empty($section_body_css_classes)) { print 'class="' . $section_body_css_classes . '"'; } ?>>
+<?php if ($content['field_section_icon'] || $content['field_section_title']): ?>
+  <h2 <?php if ($collapse != 'open') { print 'class="accordion-heading"'; } ?>>
+    <?php if ($collapse != 'open') { print '<a class="accordion-toggle" data-toggle="collapse" href="#' . $item_id . '_content' . '">'; } ?>
+    <?php print render($content['field_section_icon']); ?><?php print render($content['field_section_title']); ?>
+    <?php if ($collapse != 'open') { print '</a>'; } ?>
+  </h2>
+<?php endif; ?>
 <?php if ($collapse != 'open'): ?>
 <div id="<?php print $item_id . '_content'; ?>" class="accordion-body collapse <?php if ($collapse == 'collapsible') { print 'in'; } ?>">
 <div class="accordion-inner">

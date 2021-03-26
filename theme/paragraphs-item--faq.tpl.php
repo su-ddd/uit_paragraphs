@@ -26,5 +26,7 @@
  * @see template_process()
  */
 ?>
+<?php if ($content['field_faq_title']): ?>
 <h2><?php print render($content['field_faq_title']); ?></h2>
+<?php endif; ?>
 <?php print render($content['field_faq']); ?>

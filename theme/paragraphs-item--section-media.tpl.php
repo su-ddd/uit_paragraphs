@@ -28,7 +28,9 @@
 ?>
 <section id="<?php print 'section_' . $item_id; ?>" class="section_media <?php print 'section_media--' . $content['field_section_style']['#items'][0]['value']; ?>">
 <div class="section_media_text">
-  <h2 class="section_media__title"><?php print render($content['field_section_title']); ?></h2>
+<?php if ($content['field_section_title']): ?>
+<h2 class="section_media__title"><?php print render($content['field_section_title']); ?></h2>
+<?php endif; ?>
   <div class="section_media__body">
     <?php print render($content['field_section_body']); ?>
   </div>
