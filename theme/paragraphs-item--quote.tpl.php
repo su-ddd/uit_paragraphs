@@ -26,9 +26,9 @@
  * @see template_process()
  */
 ?>
-<?php if ($content['field_quote_text'] || $content['field_quote_author']): ?>
+<?php if ($content['field_quote_text']): ?>
 <blockquote class="blockquote">
 <?php print render($content['field_quote_text']); ?>
-<footer class="blockquote-footer"><?php print render($content['field_quote_author']); ?></footer>
+<?php if ($content['field_quote_author']): ?><footer class="blockquote-footer"><?php print render($content['field_quote_author']); ?></footer><?php endif; ?>
 </blockquote>
 <?php endif; ?>
