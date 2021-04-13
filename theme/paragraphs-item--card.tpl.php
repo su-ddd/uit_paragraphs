@@ -33,8 +33,8 @@
   }
 ?>
 <div class="column card <?php print 'card-' . $card_color; ?>">
-  <?php if ($content['field_card_icon'] || $content['field_card_title']): ?>
-  <h3><i class="fa <?php print render($content['field_card_icon']); ?> fa-2x" aria-hidden="true"></i><?php print render($content['field_card_title']); ?></h3>
+  <?php if ($content['field_card_title']): ?>
+  <h3><?php if ($content['field_card_icon']): ?><i class="fa <?php print render($content['field_card_icon']); ?> fa-2x" aria-hidden="true"></i><?php endif; ?><?php print render($content['field_card_title']); ?></h3>
   <?php endif; ?>
   <?php print render($content['field_card_body']); ?>
   <?php print render($content['field_card_url']); ?>
