@@ -58,7 +58,9 @@
 <?php if ($content['field_section_title']): ?>
   <h2 <?php if ($collapse != 'open') { print 'class="accordion-heading"'; } ?>>
     <?php if ($collapse != 'open') { print '<a class="accordion-toggle" data-toggle="collapse" href="#' . $item_id . '_content' . '"'; } ?>
-    <?php if ($collapse == 'collapsible') { print 'aria-expanded="true"'; } else { print 'aria-expanded="false"'; } ?>
+    <?php if ($collapse != 'open'): ?>
+      <?php if ($collapse == 'collapsible') { print 'aria-expanded="true"'; } else { print 'aria-expanded="false"'; } ?>
+    <?php endif; ?>
     <?php if ($collapse != 'open') { print '>'; } ?>
     <?php if ($content['field_section_icon']): ?><?php print render($content['field_section_icon']); ?><?php endif; ?><?php print render($content['field_section_title']); ?>
     <?php if ($collapse != 'open') { print '</a>'; } ?>
