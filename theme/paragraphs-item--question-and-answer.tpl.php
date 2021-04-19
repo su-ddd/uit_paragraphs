@@ -27,6 +27,9 @@
  */
 ?>
 <?php if ($content['field_question']): ?>
-<h3><?php print render($content['field_question']); ?></h3>
+<dt><?php print render($content['field_question']); ?></dt>
 <?php endif; ?>
-<?php print render($content['field_answer']); ?>
+
+<?php if ($content['field_answer']): ?>
+<dd><?php print render($content['field_answer']); ?></dd>
+<?php endif; ?>
