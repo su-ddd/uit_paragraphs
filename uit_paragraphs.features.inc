@@ -14,13 +14,6 @@ function uit_paragraphs_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_views_api().
- */
-function uit_paragraphs_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
-}
-
-/**
  * Implements hook_paragraphs_info().
  */
 function uit_paragraphs_paragraphs_info() {
@@ -43,11 +36,6 @@ function uit_paragraphs_paragraphs_info() {
     'section_generic' => array(
       'name' => 'Section (Generic)',
       'bundle' => 'section_generic',
-      'locked' => '1',
-    ),
-    'section_media' => array(
-      'name' => 'Section Media',
-      'bundle' => 'section_media',
       'locked' => '1',
     ),
     'section_with_cards' => array(
