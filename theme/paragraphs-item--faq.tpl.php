@@ -26,9 +26,11 @@
  * @see template_process()
  */
 ?>
-<section id="<?php print 'section_' . $item_id; ?>">
+<section id="<?php print 'section_' . $item_id; ?>" class="section">
+<div class="section-body">
 <?php if ($content['field_faq_title']): ?>
 <h2><?php print render($content['field_faq_title']); ?></h2>
 <?php endif; ?>
 <?php print render($content['field_faq']); ?>
+</div>
 </section>
