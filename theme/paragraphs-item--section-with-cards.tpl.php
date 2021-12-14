@@ -62,7 +62,7 @@
       <?php if ($collapse == 'collapsible') { print 'aria-expanded="true"'; } else { print 'aria-expanded="false"'; } ?>
     <?php endif; ?>
     <?php if ($collapse != 'open') { print '>'; } ?>
-    <?php if ($content['field_section_icon']): ?><?php print render($content['field_section_icon']); ?><?php endif; ?><?php print render($content['field_section_title']); ?>
+    <?php if (isset($content['field_section_icon'])): ?><?php print render($content['field_section_icon']); ?><?php endif; ?><?php print render($content['field_section_title']); ?>
     <?php if ($collapse != 'open') { print '</a>'; } ?>
   </h2>
 <?php endif; ?>
